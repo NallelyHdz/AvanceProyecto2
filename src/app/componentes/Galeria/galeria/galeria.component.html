@@ -1,0 +1,23 @@
+        <p class="text">Centro de Ayuda</p>
+            <br><br><br>
+            <div class="search-con">
+                <input type="text" class="search" placeholder="¿En que puedo ayudarte?">
+            </div>
+            <br><br><br>
+        <button type="button" class="btn ">Restablecer Contraseña</button>
+        <button type="button" class="btn ">Registarse</button>
+        <br><br><br>
+        <table class="table">
+            <thead class="col-con">
+              <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripcion</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of ProductList">
+              <tr>
+                <th scope="row">{{item.Nombre}}</th>
+                <td>{{item.Descripcion}}</td>
+              </tr>
+            </tbody>
+          </table>

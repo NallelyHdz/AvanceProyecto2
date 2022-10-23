@@ -1,0 +1,30 @@
+
+.footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 10px;
+}
+.container{
+    background-color: rgb(226,192,255);
+    width: 100%;
+    height: 20%;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+
+.text{
+    font-size: 20px;
+    margin-top: 10x;
+}
+
+.text2{
+    font-size: 26px;
+    color: azure;
+}
+
+h6{
+    font-size: 20px;
+    color: rgb(46, 44, 44);
+}
