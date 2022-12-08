@@ -8,9 +8,19 @@ const URL1='assets/data/pd1.json';
 })
 
 export class DescripcionPService{
-    constructor(private http: HttpClient){}
+    url="http://localhost/php/";
+
+    constructor(private http:HttpClient){}
 
     getAll(){
-        return this.http.get(URL1);
+
+        return this.http.get(`${this.url}getall.php`);
+
+    }
+
+    agregar(Producto:string){
+
+        return this.http.post(`${this.url}post.php`,JSON.stringify(Producto));
+
     }
 }

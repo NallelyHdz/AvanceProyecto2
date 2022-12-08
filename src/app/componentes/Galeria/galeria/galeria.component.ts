@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DescripcionPService } from 'src/service/DescripcionP.service';
+import { FormGroup,FormControl} from '@angular/forms';
 import{Route}from '@angular/router';
 
 @Component({
@@ -9,15 +10,48 @@ import{Route}from '@angular/router';
 })
 export class GaleriaComponent implements OnInit {
 
+  productos=null;
   ProductList:any[]=[];
+  productForm= new FormGroup({
+
+    Nombre:new FormControl(''),
+
+    Cantidad:new FormControl(''),
+
+    Precio:new FormControl('')
+
+  });
   constructor(private ProductosSvc:DescripcionPService) { 
-    this.ProductosSvc.getAll().subscribe((result:any)=>{
-      this.ProductList=result;
-      console.log(result)
-    });
-  }
+   //this.ProductosSvc.getAll().subscribe((result:any)=>{
+      //this.ProductList=result;
+      //console.log(result)
+    }
+  
 
   ngOnInit(): void {
+      this.MostrarTodos();
   }
+
+  MostrarTodos(){
+
+    this.ProductosSvc.getAll().subscribe((result:any)  =>
+
+    this.ProductList=result);
+
+    console.log(this.ProductList+"hola");
+
+  }
+  Agregar():void{
+
+    this.ProductosSvc.agregar(this.productForm.value).subscribe(()=>{
+
+      this.MostrarTodos();
+
+      this.productForm.reset();
+
+    })
+
+  }
+
 
 }

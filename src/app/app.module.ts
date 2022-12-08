@@ -11,6 +11,7 @@ import { AboutComponent } from './componentes/About/about/about.component';
 import { ContactoComponent } from './componentes/Contacto/contacto/contacto.component';
 import { GaleriaComponent } from './componentes/Galeria/galeria/galeria.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     BrowserModule,
     AppToutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
